@@ -1,0 +1,30 @@
+* {
+  font-family: "Roboto", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+
+  background: none;
+  outline: none;
+}
+
+html,
+body,
+#root {
+  display: flex;
+  flex-direction: column;
+
+  width: 100vw;
+  height: 100vw;
+
+  align-items: center;
+  margin-top: 4rem;
+
+  overflow: hidden;
+}
