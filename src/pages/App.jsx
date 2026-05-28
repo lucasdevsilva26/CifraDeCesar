@@ -11,17 +11,19 @@ function App() {
 
   function showResult(type, value) {
     let newText = "";
-    let oldText = type === "name" ? value : text;
-    let textShift = type === "shift" ? value : NaN(shift) ? 0 : shift;
+    const oldText = type === "name" ? value : text;
+    let textShift = type === "shift" ? value : shift;
+    const direction = mode ? 1 : -1;
 
-    if (!mode) {
-      for (let i of oldText.split("")) {
-        newText +=
-          alphabets.latin[
-            (alphabets.latin.indexOf(i) + textShift) % alphabets.latin.length
-          ];
-      }
+    for (let i of oldText.split("")) {
+      newText +=
+        alphabets.latin[
+          (alphabets.latin.length +
+            (alphabets.latin.indexOf(i) + textShift * direction)) %
+            alphabets.latin.length
+        ];
     }
+
     setNewName(newText);
   }
   function onTextChange(e) {
@@ -32,15 +34,20 @@ function App() {
     setShift(Number(e.target.value));
     showResult("shift", Number(e.target.value));
   }
+  function onModeChange() {
+    setMode(!mode);
+    showResult("mode", "");
+  }
 
   return (
     <form id="App">
-      <h1>Cifra de César</h1>
+      <h1 id="tittle">Cifra de César</h1>
 
       <button style={{ display: "none" }}></button>
       <header>
         <label htmlFor="">Texto</label>
         <textarea
+        id="text"
           placeholder="Digite seu texto"
           required
           onChange={(e) => onTextChange(e)}
@@ -57,7 +64,7 @@ function App() {
       </header>
 
       <main>
-        <button type="button" onClick={() => setMode(!mode)}>
+        <button type="button" className={`${!mode}`} onClick={() => onModeChange()}>
           <span>Codificar</span>
 
           <div>

@@ -8,9 +8,11 @@
   padding: 2rem;
 
   border-radius: 1rem;
-  background-color: darkgray;
+  background: linear-gradient(30deg, rgb(80, 82, 107), rgb(119, 124, 168));
+
+  border: 0.2rem solid black;
 }
-#App > h1 {
+#App #tittle {
   margin-block: 2rem;
 
   font-size: 4rem;
@@ -27,10 +29,13 @@
   width: 100%;
   padding: 1rem;
 
+  background-color: rgb(255, 255, 255, .25);
+
   border-radius: 1rem;
-  background: rgb(192, 192, 192);
+  border: solid .2rem rgb(0, 0, 0);
 
   font-size: 3rem;
+  color: white;
 
   appearance: none;
   resize: none;
@@ -47,6 +52,8 @@
 }
 #App textarea::-webkit-scrollbar-thumb {
   border-radius: 9999rem;
+  border: solid 0.25rem rgb(0, 0, 0);
+
   background: gray;
 }
 
@@ -76,9 +83,19 @@
   padding-inline: 0.5rem;
 
   border-radius: 1rem;
-  background: linear-gradient(90deg, rgb(121, 121, 121), rgb(143, 143, 143));
+  border: solid 0.2rem rgb(0, 0, 0);
 
   font-size: inherit;
+
+  transition: 1s;
+}
+#App > main > .true {
+  background: linear-gradient(90deg, rgb(21, 179, 42), rgb(72, 231, 93));
+  color: rgb(8, 90, 0);
+}
+#App > main > .false {
+  background: linear-gradient(-90deg, rgb(179, 21, 21), rgb(231, 72, 72));
+  color: rgb(255, 195, 195);
 }
 
 #App > main > button > div {
@@ -89,6 +106,8 @@
   height: inherit;
 
   text-align: right;
+
+  opacity: 0.9;
 }
 
 #App > main > button > div:nth-of-type(1) {
@@ -99,6 +118,8 @@
   width: max-content;
   padding: 0.5rem;
   padding-block: 1.5rem;
+
+  border: solid 0.25rem rgb(0, 0, 0);
 }
 #App > main > button span {
   font-weight: bold;
@@ -114,7 +135,7 @@
   position: relative;
 
   border-radius: 9999rem;
-  background-color: rgb(112, 112, 112);
+  background: rgb(112, 112, 112);
 }
 #App > main > button > div > div {
   height: 100%;
@@ -124,7 +145,7 @@
   top: 0%;
 
   border-radius: 9999rem;
-  background-color: rgb(63, 63, 63);
+  background: rgb(63, 63, 63);
 
   transition: 1s ease;
 }
@@ -137,8 +158,10 @@
   min-height: 5rem;
   padding: 1rem;
 
+  background-color: rgb(255, 255, 255, .25);
+
   border-radius: 9999rem;
-  background-color: rgb(192, 192, 192);
+  border: solid .2rem rgb(0, 0, 0);
 
   font-size: 3rem;
 }
